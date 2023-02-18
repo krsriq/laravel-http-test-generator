@@ -1,0 +1,53 @@
+{
+    "name": "krsriq/laravel-http-test-generator",
+    "description": "",
+    "keywords": [
+        "krsriq",
+        "laravel-http-test-generator"
+    ],
+    "homepage": "https://github.com/krsriq/laravel-http-test-generator",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Daniel Schmelz",
+            "email": "daniel@schmelz.org",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^9.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Krsriq\\LaravelHttpTestGenerator\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Krsriq\\LaravelHttpTestGenerator\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Krsriq\\LaravelHttpTestGenerator\\LaravelHttpTestGeneratorServiceProvider"
+            ],
+            "aliases": {
+                "LaravelHttpTestGenerator": "Krsriq\\LaravelHttpTestGenerator\\LaravelHttpTestGeneratorFacade"
+            }
+        }
+    }
+}
