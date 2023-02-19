@@ -1,30 +1,28 @@
-# Very short description of the package
+# Laravel Http Test Generator
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/krsriq/laravel-http-test-generator.svg?style=flat-square)](https://packagist.org/packages/krsriq/laravel-http-test-generator)
 [![Total Downloads](https://img.shields.io/packagist/dt/krsriq/laravel-http-test-generator.svg?style=flat-square)](https://packagist.org/packages/krsriq/laravel-http-test-generator)
-![GitHub Actions](https://github.com/krsriq/laravel-http-test-generator/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package can be used to generate integration tests from your Laravel application's Http client calls.
+It records the requests and responses and generates a test file for you, where the requests are mocked.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require krsriq/laravel-http-test-generator
+composer require krsriq/laravel-http-test-generator --dev
 ```
 
 ## Usage
 
+Insert the following in an application where you want to generate tests:
+
 ```php
-// Usage description here
+app(LaravelHttpTestGenerator::class)->enable()
 ```
 
-### Testing
-
-```bash
-composer test
-```
+Then, visit the route you want to test. The test class will be generated in the `tests/Feature` directory.
 
 ### Changelog
 
@@ -38,15 +36,6 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 If you discover any security related issues, please email daniel@schmelz.org instead of using the issue tracker.
 
-## Credits
-
--   [Daniel Schmelz](https://github.com/krsriq)
--   [All Contributors](../../contributors)
-
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
